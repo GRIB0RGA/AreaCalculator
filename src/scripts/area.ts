@@ -1,7 +1,7 @@
 export enum ShapeTypes {
-  Circle = "circle",
-  Rectangle = `rectangle`,
-  Triangle = `triangle`,
+  Circle,
+  Rectangle,
+  Triangle,
 }
 
 export interface Circle {
@@ -30,7 +30,7 @@ type Shape = Circle | Rectangle | Triangle;
 
 //prettier-ignore
 export const getArea = (shape: Shape) =>
-  shape.shapeType === "circle" ? getCircleArea(shape.radius)
-  : shape.shapeType === "triangle" ? getRectangleArea(shape.height,shape.sideLength)  
-  : shape.shapeType === "rectangle" ? getTriangleArea(shape.height,shape.sideLength) 
+  shape.shapeType === ShapeTypes.Circle ? getCircleArea(shape.radius)
+  : shape.shapeType === ShapeTypes.Rectangle ? getRectangleArea(shape.height,shape.sideLength)  
+  : shape.shapeType === ShapeTypes.Triangle ? getTriangleArea(shape.height,shape.sideLength) 
   : console.log(`Shape not found`);
